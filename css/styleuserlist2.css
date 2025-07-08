@@ -1,0 +1,113 @@
+body {
+  font-family: "Zen Maru Gothic", sans-serif;
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+}
+
+
+
+
+h2 {
+  position: relative;
+  margin: 15px 0 30px 0;
+  padding: 10px 20px 10px 68px;
+  word-break: break-all;
+  border-top: 3px solid #444444;
+  border-radius: 12px 0 0 0;
+  font-size: 30px;
+}
+
+h2 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 3.5rem;
+  padding: 0 20px;
+  color: #fff;
+  border-radius: 10px 0 15px 15px;
+  background: #444444;
+}
+
+#userinputlink{
+  display: flex;
+  justify-content: right;
+}
+
+
+
+a {
+  color: inherit;        /* 現在の文字色を継承する（または好きな色でもOK） */
+}
+
+
+a:active,
+a:hover,
+a:visited
+{
+  color: inherit;        /* 状態が変わっても色を変えない */
+
+}
+
+
+#button_user {
+  background: #eee;
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+  padding: 10px 25px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  /* button要素のデフォルトスタイルをリセット */
+  border: none;
+  cursor: pointer;
+  font-family: inherit; /* 親要素からフォントを継承 */
+  font-size: inherit; /* 親要素からフォントサイズを継承 */
+}
+
+#button_user::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: calc(100% - 3px);
+  height: calc(100% - 3px);
+  border: 2px solid gray;
+  transition: 0.2s;
+}
+
+#button_user:hover::before {
+  top: 0;
+  left: 0;
+}
+
+#button_user:hover {
+  text-decoration: none;
+  background-color: lightgray;
+}
+
+
+
+
+table {
+  /* テーブル全体の幅を必要に応じて調整することもできます */
+  width: 100%; /* 例: 親要素に合わせて幅を100%にする */
+  border-collapse: collapse; /* セルの境界線を結合する */
+}
+
+tr {
+  height: 140px; /* 各行の高さを80pxに設定 */
+}
+
+td {
+  width: 160px; /* 各列の幅を160pxに設定 */
+  padding: 8px; /* セル内の余白を設定（任意） */
+  border: 1px solid #ddd; /* セルの境界線（任意） */
+  vertical-align: middle; /* セル内のコンテンツを垂直方向中央に配置（任意） */
+  text-align: left; /* セル内のコンテンツを左揃えに配置（任意） */
+}

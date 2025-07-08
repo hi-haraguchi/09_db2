@@ -1,0 +1,191 @@
+body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+
+header{
+  margin-top: 65px;
+}
+
+
+h2 {
+  position: relative;
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid gray;
+  background: #fff;
+  width: 78%;
+  height: 60px;
+  margin: 0 auto;
+}
+
+h2:before,
+h2:after {
+  position: absolute;
+  content: '';
+}
+
+h2:before {
+  top: -60px;
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 120px;
+  border: 2px solid gray;
+  border-radius: 50%;
+  background: #fff;
+  /* background: url('../img/pilebooks.png') no-repeat;
+  background-size: auto 40px; 
+  background-position: center 10px; */
+
+}
+
+h2:after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: #fff;
+}
+
+img {
+  height: 40px;
+  width: auto;
+  margin-bottom: 8px;
+}
+
+h2 span {
+  top: -56px;
+  position: relative;
+  font-size: 40px;
+  background: #fff;
+  z-index: 2;
+}
+
+.header1{
+  font-size: 40px;
+}
+
+.header2{
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+
+.grid-container {
+    display: grid;
+    /* 2つの列を均等に割り振る (1fr 1fr は repeat(2, 1fr) と同じ) */
+    grid-template-columns: 1fr 1fr; /* ここを修正 */
+    /* あるいは grid-template-columns: repeat(2, 1fr); */
+    gap: 25px; /* グリッドアイテム間の隙間 */
+    width: 81%;
+    height: 490px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.grid-item {
+    border: 2px solid lightgray;
+    padding: 20px;
+    text-align: center;
+    /* item1, item2, item3, item4 のいずれかのクラスが適用される想定 */
+}
+
+
+
+  .grid-box {
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    color:#555555;
+    transition: 0.3s ease-in-out;
+    font-weight: 600; 
+}
+
+.grid-box span{
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.grid-box p{
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.others{
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    color:#555555;
+    transition: 0.3s ease-in-out;
+    font-weight: 600; 
+}
+
+.others span{
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.others p{
+  margin-left: 10px;
+  margin-bottom: 5px;
+} 
+
+  .grid-box::before,
+  .grid-box::after {
+	content: '';
+	width: 10px;
+	height: 10px;
+	border-color: gray;
+	box-sizing: border-box;
+	border-style :solid;
+	display: block;
+	position: absolute;
+	transition: all 0.3s ease-in-out;
+}
+  .grid-box::before {
+	top: -25px;
+	left: -25px;
+	border-width: 2px 0 0 2px;
+	z-index: 5;
+}
+  .grid-box::after {
+	bottom: -25px;
+	right: -25px;
+	border-width: 0 2px 2px 0;
+}
+  .grid-box:hover:before,
+  .grid-box:hover:after {
+	width: calc(100% + 50px);
+	height: calc(100% + 50px);
+	border-color: gray;
+}
+  .grid-box:hover {
+	border-color: gray;
+}
+
+a {
+  color: inherit;        /* 現在の文字色を継承する（または好きな色でもOK） */
+}
+
+
+a:active,
+a:hover,
+a:visited
+{
+  color: inherit;        /* 状態が変わっても色を変えない */
+
+}
