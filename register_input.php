@@ -29,12 +29,14 @@
 </div>  
 
 
-
+<div id="input-detail">
   <div id="book_calligraphy">
-    <img id="bookcover" alt="" src="">
+    <img id="bookcover" >
   </div>
 
-  <form action="register_create.php" method="POST">
+  <form action="register_create.php" method="POST" >
+  <div id="form-inner">
+    <div id="form-inner_left">
       <div>
         <!-- <label for="isbn13">タイトル:</label> -->
         <input type="hidden" name="isbn13" id="isbn13">
@@ -63,28 +65,33 @@
         <!-- <label for="detail_url">URL:</label> -->
         <input type="hidden" name="detail_url" id="detail_url" readonly> <br> <a id="link_display" href="#" target="_blank"></a> 
       </div>
+    </div>
+
+    <div id="inputplus">
       <div>
         <label for="acquired_date">所蔵した日: </label>
         <input type="date" name="acquired_date" id="acquired_date">
-    </div>
-    <div>    
-      <label for="location">所蔵場所: </label>
-      <select name="location" id="location">
-        <option value="">選択してください</option>        
-        <option value="入口側の棚">入口側の棚</option>
-        <option value="教室側の棚">教室側の棚</option>
-        <option value="机上のラック">机上のラック</option>
-      </select>
-    </div>
-    <div>
-      <label for="notes">備考:</label><br>
-      <textarea id="notes" name="notes" rows="5" cols="40"></textarea>
+      </div>
+      <div>    
+        <label for="location">所蔵場所: </label>
+        <select name="location" id="location">
+          <option value="">選択してください</option>        
+          <option value="入口側の棚">入口側の棚</option>
+          <option value="教室側の棚">教室側の棚</option>
+          <option value="机上のラック">机上のラック</option>
+        </select>
       </div>
       <div>
-        <button id="button_register">登録します！</button>
+        <label for="notes">備考:</label><br>
+        <textarea id="notes" name="notes" rows="5" cols="40"></textarea>
       </div>
+      <div>
+          <button id="button_register">登録します！</button>
+      </div>
+    </div>
+  </div>
   </form>
-
+</div>
 
 
 

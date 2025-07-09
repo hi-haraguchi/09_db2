@@ -16,7 +16,7 @@
 <h2><span></span>ジーズ図書　ユーザの登録</h2>
 
 <div id="userlistlink">
-  <a href="user_read.php" target='_blank'>ユーザの一覧画面へ</a>
+  <a href="user_readbarcode.php" target='_blank'>ユーザの一覧画面へ</a>
 </div>
 
 <div>

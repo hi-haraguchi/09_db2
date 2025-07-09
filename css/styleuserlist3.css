@@ -5,22 +5,7 @@ body {
   margin: 0 auto;
 }
 
-input {
-  font-family: "Zen Maru Gothic", sans-serif;
-}
 
-input[type="text"] {
-  border: none; /* まず全てのボーダーをなくす */
-  border-bottom: 1px solid #000; /* 下線のみを定義 (太さ、種類、色) */
-  padding: 5px 0; /* テキストと下線との間に少し余白を持たせる */
-  outline: none; /* フォーカス時のアウトラインを消す（任意） */
-}
-
-.explanation {
-  margin-top: 18px;
-  margin-left: 20px;
-  font-size: 18px;
-}
 
 
 h2 {
@@ -45,10 +30,12 @@ h2 span {
   background: #444444;
 }
 
-#userlistlink{
+#userinputlink{
   display: flex;
   justify-content: right;
 }
+
+
 
 a {
   color: inherit;        /* 現在の文字色を継承する（または好きな色でもOK） */
@@ -104,30 +91,33 @@ a:visited
   background-color: lightgray;
 }
 
-form {
-  margin-top: 30px;
+
+
+
+/* テーブル全体のボーダー設定をリセット */
+table {
+    border-collapse: collapse; /* セルのボーダーを結合する */
+    width: 100%; /* テーブルの幅を調整（必要であれば） */
 }
 
-form > div {
-    display: flex;        /* 各「label + input」のペアを含むdivをFlexコンテナにする */
-    align-items: center;  /* 縦方向の中央揃え (任意) */
-    margin-bottom: 10px;  /* 各行の下に余白 (任意) */
+/* 各セルのボーダーをリセット */
+th, td {
+    border: none; /* デフォルトのボーダーを削除 */
+    padding: 8px; /* セル内の余白 */
+    text-align: left; /* テキストの配置（必要であれば調整） */
 }
 
-form label {
-    /* ラベルの幅を固定して、inputの開始位置を揃える */
-    width: 80px;         /* 適切な幅に調整してください（例: ユーザーID: や 名前: の最も長い文字に合わせる） */
-    min-width: 80px;     /* 最小幅も設定しておくと良い */
-    margin-right: 10px;  /* ラベルとinputの間の余白 */
-    text-align: right;   /* ラベルのテキストを右寄せにする (任意) */
+/* テーブルヘッダー（<thead>）の下線を二重線にする */
+thead {
+    border-bottom: 3px double #000; /* 太さ3pxの二重線、色は黒 */
 }
 
-form input[type="text"] {
-                         /* これにより、inputの右端が揃います */
-    padding: 5px;        /* inputのパディング (任意) */
+/* 各行の下線（<tbody>内の<tr>）を一重線にする */
+tbody tr {
+    border-bottom: 1px solid #ccc; /* 細い一重線、色は薄いグレー */
 }
 
-/* ボタンの位置も調整する場合 (任意) */
-#button_user {
-    margin-left: calc(80px + 10px); /* ラベルの幅 + ラベルとinputの間の余白分、左にずらす */
+/* 最後の行の下線は表示しない（任意） */
+tbody tr:last-child {
+    border-bottom: none;
 }

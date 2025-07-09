@@ -179,6 +179,7 @@ h2 span {
 
 a {
   color: inherit;        /* 現在の文字色を継承する（または好きな色でもOK） */
+
 }
 
 
@@ -188,4 +189,8 @@ a:visited
 {
   color: inherit;        /* 状態が変わっても色を変えない */
 
+}
+
+.others p{
+  margin-top: 10px;
 }

@@ -5,6 +5,10 @@ body {
   margin: 0 auto;
 }
 
+#display{
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
 input {
   font-family: "Zen Maru Gothic", sans-serif;
 }
@@ -104,4 +108,100 @@ a:visited
 #button_register:hover {
   text-decoration: none;
   background-color: lightgray;
+}
+
+#book_calligraphy {
+    width: 210px; 
+}
+
+#bookcover:not([src]) { /* 1. 詳細度が高いセレクタ (ID + 擬似クラス) */
+    display: none;      /* 要素自体を非表示にする */
+}
+
+#bookcover {
+    margin-top: 10px;
+    height: 300px;
+    width: 200px;
+    object-fit: contain;
+}
+
+#input-detail{
+  display: flex;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+#form-inner{
+  display: flex;
+  gap :80px;
+}
+
+#form-inner_left{
+  width: 380px;
+}
+
+#inputplus div{
+  margin-bottom: 20px;
+}
+
+
+#form-inner > div > div {
+    display: flex; /* 各「label + input」のペアを含むdivをFlexコンテナにする */
+    align-items: center; /* 縦方向の中央揃え (任意) */
+    margin-bottom: 10px; /* 各行の下に余白 (任意) */
+}
+
+#form-inner label {
+    /* ラベルの幅を固定して、inputの開始位置を揃える */
+    width: 80px; /* 適切な幅に調整してください */
+    min-width: 80px; /* 最小幅も設定しておくと良いでしょう */
+    margin-right: 10px; /* ラベルとinputの間の余白 */
+    text-align: right; /* ラベルのテキストを右寄せにする (任意) */
+}
+
+#form-inner input[type="text"] {
+    flex-grow: 1; /* 残りのスペースを全てinputが占めるようにする */
+    /* これにより、inputの右端が揃います */
+    padding: 5px; /* inputのパディング (任意) */
+
+}
+
+/* 読み取り専用のinputの見た目を調整 (任意) */
+#form-inner input[readonly] {
+    background-color: #f0f0f0;
+    cursor: default;
+}
+
+#inputplus > div {
+    display: flex;        /* 各「label + input/select/textarea」のペアを含むdivをFlexコンテナにする */
+    align-items: flex-start; /* 縦方向の揃えを上端に (textareaがあるためflex-startが適切) */
+    margin-bottom: 15px;  /* 各行の下に余白 (任意) */
+}
+
+#inputplus label {
+    /* ラベルの幅を固定して、入力フィールドの開始位置を揃える */
+    width: 100px;         /* 適切な幅に調整してください（例: 「所蔵した日: 」の長さに合わせる） */
+    margin-right: 15px;  /* ラベルと入力フィールドの間の余白 */
+    text-align: right;   /* ラベルのテキストを右寄せにする (任意) */
+    padding-top: 2px;    /* ラベルとinput/selectのテキストベースラインを合わせる微調整 (任意) */
+}
+
+#inputplus input[type="date"],
+#inputplus select,
+#inputplus textarea {
+    flex-grow: 1;        /* 残りのスペースを全て入力フィールドが占めるようにする */
+                         /* これにより、input/select/textarea の右端が揃います */
+    padding: 8px;        /* 各フィールドのパディング (任意) */
+}
+
+/* textareaの隣の<br>は不要になる可能性が高いです */
+#inputplus textarea {
+    resize: vertical; /* 縦方向のみリサイズ可能にする (任意) */
+}
+
+/* ボタンの位置を調整する場合 (任意) */
+#button_register {
+    /* ラベルの幅 + ラベルとフィールドの間の余白分、左にずらす */
+    margin-left: calc(100px + 15px); 
+    margin-top: 10px; /* ボタンの上に少し余白 */
 }

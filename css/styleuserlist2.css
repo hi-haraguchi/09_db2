@@ -111,3 +111,7 @@ td {
   vertical-align: middle; /* セル内のコンテンツを垂直方向中央に配置（任意） */
   text-align: left; /* セル内のコンテンツを左揃えに配置（任意） */
 }
+
+th {
+    vertical-align: middle; /* セル内のコンテンツを垂直方向中央に配置（任意） */
+}
