@@ -61,7 +61,7 @@ foreach ($result as $record) {
             <p>所蔵場所：" . htmlspecialchars($record["location"]) . "</p>
             <p>貸出状況：" . $loan_status_text . "</p>
             <p>予約状況：" . $reservation_status_text . "</p>
-            <p class='eachbookurl'><a href='reservation_edit.php?id={$record["isbn13"]}'>予約する</a></p>
+            <p class='eachbookurl'><a href='reservation_edit.php?id={$record["isbn13"]}' target='_blank'>予約する</a></p>
         </div>
     </div>
     ";

@@ -60,17 +60,17 @@ a:visited
 
 }
 
-.explanation {
-  margin-top: 10px;
-  margin-left: 20px;
-  font-size: 13px;
+#attention p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
 
 form{
   display: flex;
   justify-content: space-around;
-  height: 360px;
+  height: 200px;
 }
 
 label{
@@ -97,7 +97,8 @@ label{
 }
 
 #isbn13inputafter{
-  display: flex;  
+  display: flex;
+  width: 300px;  
 }
 
 #bookcover:not([src]) {
@@ -161,15 +162,19 @@ label{
 }
 
 
-#borrowing_detail{
+#returning_detail{
   display: flex;
   justify-content: flex-start;
   margin-left: 100px;
-  gap: 180px;
+  gap: 80px;
 }
 
-#left_user{
-  width: 280px;
+#bookstatus{
+  padding-top: 80px;
+}
+
+#bookstatus p{
+  margin-bottom: 10px;
 }
 
 

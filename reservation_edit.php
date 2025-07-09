@@ -77,11 +77,65 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC);
       </div>      
       <div>
         <button id="button_reserve">予約します！</button>
-      </div>      
+      </div> 
+      
+      <p id="doublebooking"></p>
+      
   </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
+
+// 予約の状態を表示
+
+$(document).ready(function() {
+    // ページ読み込み時にhiddenフィールドのisbn13の値を取得
+    const hiddenIsbn13 = $('input[name="isbn13"]').val();
+
+    // isbn13が取得できた場合のみ処理を実行
+    if (hiddenIsbn13 && hiddenIsbn13.length === 13 && /^\d{13}$/.test(hiddenIsbn13)) {
+        checkReservationStatus(hiddenIsbn13);
+    } else {
+        // ISBNが有効でない場合の初期メッセージ（必要であれば）
+        // $('#doublebooking').append('<p style="color: gray;">対象のISBNが指定されていません。</p>');
+    }
+
+    function checkReservationStatus(isbn13) {
+        $.ajax({
+            url: 'check_reservation_status.php', // サーバーサイドのスクリプトのURL
+            type: 'GET',
+            data: {
+                isbn13: isbn13
+            },
+            dataType: 'json',
+            success: function(response) {
+                const displayArea = $('#doublebooking');
+                displayArea.empty(); // 前の表示をクリア
+
+                if (response.error) {
+                    displayArea.append(`<p style="color: red;">エラー: ${response.error}</p>`);
+                } else if (response.is_reserved) {
+                    // 予約されている場合
+                    displayArea.append('<p style="color: orange; font-weight: bold;">すでに予約されています</p>');
+                } else {
+                    // 予約されていない場合（何も表示しないか、確認メッセージを表示）
+                    displayArea.append('<p style="color: gray;">現在予約はありません。</p>');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Ajaxリクエストエラー:', status, error);
+                $('#doublebooking').empty().append('<p style="color: red;">予約状態の確認中にエラーが発生しました。</p>');
+            }
+        });
+    }
+});
+
+
+
+
+
+// ユーザIDが入力されたら、ユーザ名を自動表示
+
         $(document).ready(function() {
             // #reserved_by の入力イベントを監視
             $('#reserved_by').on('input', function() {
